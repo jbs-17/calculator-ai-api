@@ -5,7 +5,8 @@ import dotenv from "dotenv";
 dotenv.config();
 dotenv.config({ path: ".env" });
 
-app.listen(process.env.APP_PORT, (error) => {
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, (error) => {
   if (error) {
     logger.error({ msg: "server gagal running!" });
     process.exit(1);
