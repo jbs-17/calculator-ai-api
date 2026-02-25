@@ -2,6 +2,7 @@ import { app } from "./app.js";
 import { logger } from "./utils/logger.js";
 
 import dotenv from "dotenv";
+dotenv.config();
 dotenv.config({ path: ".env" });
 
 app.listen(process.env.APP_PORT, (error) => {

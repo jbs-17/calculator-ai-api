@@ -1,6 +1,8 @@
 import { inCollection } from "../utils/db.js";
 
-// middleware buat cek api key
+/**
+ * middleware buat cek api key 
+ */
 export const apiKeyInHeaderMiddleware = async (req, res, next) => {
   const api_key = req.headers["x-api-key"] ?? "";
 
@@ -9,7 +11,9 @@ export const apiKeyInHeaderMiddleware = async (req, res, next) => {
       error: "Unauthorized! Api key diperlukan!",
     });
 
-  const exist = (await inCollection("api_keys")).findOne({ api_key });
+    
+
+  const exist = await (await inCollection("api_keys")).findOne({ api_key });
 
   if (!exist)
     return res.status(401).json({

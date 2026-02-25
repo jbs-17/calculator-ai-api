@@ -1,6 +1,8 @@
-import { calcAi } from "../calc-ai.js";
+import { calcGroq } from "../calc-groq.js";
 
-// middleware buat method get
+/**
+ * middleware buat method get
+*/ 
 export const getCalcAiMiddleware = async (req, res, next) => {
   const { math_text } = req.query;
   if (!math_text)
@@ -13,7 +15,7 @@ export const getCalcAiMiddleware = async (req, res, next) => {
 export const getCalcAiController = async (req, res) => {
   const { math_text } = req.query;
 
-  const result = await calcAi(math_text);
+  const result = await calcGroq(math_text);
 
   if (result.error) {
     res.status(400).json(result);

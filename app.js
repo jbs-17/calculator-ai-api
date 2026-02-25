@@ -16,7 +16,7 @@ app.get("/", async (req, res) => {
 
 // akses api pakai post method
 app.post(
-  "/api/calc_ai",
+  "/api/calculator_ai",
   apiKeyInHeaderMiddleware,
   postCalcAiMiddleware,
   postCalcAiController,
@@ -24,14 +24,14 @@ app.post(
 
 // akses api pakai method get
 app.get(
-  "/api/calc_ai",
+  "/api/calculator_ai",
   apiKeyInHeaderMiddleware,
   getCalcAiMiddleware,
   getCalcAiController,
 ); // perlu api key
 
 // get _hidden buat test
-app.get("/api/calc_ai/_hidden", getCalcAiMiddleware, getCalcAiController); // _hidden buat test aja
+app.get("/api/calculator_ai/_hidden", getCalcAiMiddleware, getCalcAiController); // _hidden buat test aja
 
 // test errorr
 app.get("/test/error", (req, res) => {
