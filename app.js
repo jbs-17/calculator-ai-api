@@ -5,6 +5,7 @@ import { postCalcAiMiddleware, postCalcAiController } from "./handlers/postCalcA
 import { apiKeyInHeaderMiddleware } from "./handlers/apiKeyInHeaderMiddleware.js";
 
 export const app = express();
+export default app;
 
 app.use(express.json());
 
