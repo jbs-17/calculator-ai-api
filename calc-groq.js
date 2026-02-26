@@ -5,7 +5,7 @@ import fsp from "node:fs/promises";
 import { validateAIModelOutput } from "./utils/validateAIModelOutput.js";
 
 
-const system_promt = await fsp.readFile("./etc/system_promt.md", "utf-8");
+const system_promt = await fsp.readFile("./etc/system_promt_rewrited_by_gpt.md", "utf-8");
 
 
 
