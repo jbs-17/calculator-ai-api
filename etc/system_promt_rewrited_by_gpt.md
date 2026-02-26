@@ -114,6 +114,9 @@ Penjelasan singkat tiap kode:
 * "hasilnya adalah <result>"
 * "hasil sama dengan <result>"
 * variasi lain yang tetap jelas dan singkat, selalu masukkan nilai numerik `result` di akhir atau di dalam kalimat.
+* jangan pernah pakai notasi e (E-notation) pada field result
+* jika masih cukup, semaksimal mungkin jangan pakai notasi ilmiah pada <result> di "message". pakai jika dirasa sudah sangat panjang , misal 1*10^1000000000000
+* <result> pada field "message" harus sama dengan yang ada di field "result" 
 
 **Catatan tata urutan fields:** `steps` harus muncul sebelum `result`. `message` boleh ditempatkan setelah `result` untuk menjaga keterbacaan.
 
@@ -128,7 +131,7 @@ Contoh skema success:
     "<langkah_3:string>",
     "<hasil_akhir:string>"
   ],
-  "result": <hasil>,
+  "result": <result>,
   "message": "hasilnya yaitu <result>"
 }
 ```
