@@ -1,15 +1,9 @@
 {
        "$schema": "https://openapi.vercel.sh/vercel.json",
        "version": 2,
-       "builds": [
-              {
-                     "src": "app.js",
-                     "use": "@vercel/node"
-              }
-       ],
        "functions": {
               "app.js": {
-                     "includeFiles": "etc/system_promt.md"
+                     "includeFiles": "etc/**"
               }
        },
        "routes": [
